@@ -1,1 +1,1 @@
-# https-www.uniqueeducationcenter.org.in
+uniqueeducationcenter.com
