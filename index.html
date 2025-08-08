@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UNIQUE EDUCATION CENTER</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>UNIQUE EDUCATION CENTER</h1>
+    <p class="tagline">A JOURNEY TO EXCELLENCE</p>
+    <nav>
+      <ul class="navbar">
+        <li><a href="#" onclick="showTab('home')">Home</a></li>
+        <li><a href="#" onclick="showModal()">About Headmaster</a></li>
+        <li><a href="#" onclick="showTab('courses')">Courses</a></li>
+        <li><a href="#" onclick="showTab('contact')">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="tab-section active">
+      <h3>Welcome</h3>
+      <p>Step into UNIQUE EDUCATION CENTER, where learning is your first step to excellence.</p>
+      <p>At UNIQUE EDUCATION CENTER, we don’t just teach — we guide you on a journey to excellence.</p>
+      <p>Begin your path to success at our center — a journey to excellence starts here.</p>
+    </section>
+
+    <section id="courses" class="tab-section">
+      <h3>Courses Offered</h3>
+      <p>We offer classes from LKG to PUC (Science, Commerce, Arts). Karate classes are also handled.</p>
+    </section>
+
+    <section id="contact" class="tab-section">
+      <h3>Contact / Admission Form</h3>
+      <form action="https://formspree.io/f/moqgrzpq" method="POST">
+        <label for="name">Student Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="class">Class Interested In:</label><br>
+        <input type="text" id="class" name="class" required><br><br>
+
+        <label for="phone">Parent Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4"></textarea><br><br>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Location: 1st Cross Road, Beside Benka ITI College, Teacher's Layout, Ragavendhra Nagar, Mysuru - 570011</p>
+    <p>Contact: 9886245360</p>
+    <p>Trust: Samskara Shiksha Niketan Trust (R)</p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3>About Headmaster</h3>
+      <p><strong>Mr. Sunil A P</strong><br>
+         Headmaster of UNIQUE EDUCATION CENTER<br>
+         Dedicated to guiding every student on a journey to excellence.</p>
+    </div>
+  </div>
+
+  <script>
+    function showTab(id) {
+      const sections = document.querySelectorAll('.tab-section');
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function showModal() {
+      document.getElementById('modal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('modal');
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+  </script>
+</body>
+</html>
